@@ -1,0 +1,10 @@
+az VMSS extension set \
+--resource-group MC_t-chqi_test-upgrade_eastus \
+--vmss-name akswin \
+--name DSC \
+--publisher Microsoft.Powershell \
+--version 2.77 \
+--settings '{
+   "ModulesURL":"https://github.com/qinmaye/Work/raw/master/DSC/createfile.ps1.zip", 
+   "configurationFunction": "createfile.ps1\\CreateFile",
+}' 

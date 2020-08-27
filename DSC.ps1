@@ -11,7 +11,7 @@ configuration CreateFile
                 return @{
                     SetScript  = $SetScript
                     TestScript = $TestScript
-                    GetScript  = $GetScript             
+                    GetScript  = $GetScript
                 }
             }
             TestScript = { $false }
