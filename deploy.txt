@@ -1,3 +1,5 @@
+Publish-AzVMDscConfiguration -ConfigurationPath .\DSC.ps1  -OutputArchivePath  'output.zip'
+
 az VMSS extension set \
 --resource-group MC_t-chqi_test-upgrade_eastus \
 --vmss-name akswin \
@@ -5,6 +7,6 @@ az VMSS extension set \
 --publisher Microsoft.Powershell \
 --version 2.77 \
 --settings '{
-   "ModulesURL":"https://github.com/qinmaye/Work/raw/master/DSC/createfile.ps1.zip", 
-   "configurationFunction": "createfile.ps1\\CreateFile",
+   "ModulesURL":"https://github.com/qinmaye/DSC/raw/master/output.zip", 
+   "configurationFunction": "DSC.ps1\\CreateFile",
 }' 
