@@ -1,4 +1,4 @@
-configuration CreateFile
+configuration DSC
 {
     param
     (
@@ -21,4 +21,4 @@ configuration CreateFile
         }
     }
 }
-CreateFile
+DSC
