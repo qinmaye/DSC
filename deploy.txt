@@ -1,7 +1,7 @@
 Publish-AzVMDscConfiguration -ConfigurationPath .\DSC.ps1  -OutputArchivePath  'output.zip'
 
 az VMSS extension set \
---resource-group MC_t-chqi_test-upgrade_eastus \
+--resource-group MC_t-chqi_akswin_eastus \
 --vmss-name akswin \
 --name DSC \
 --publisher Microsoft.Powershell \
