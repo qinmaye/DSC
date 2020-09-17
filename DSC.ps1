@@ -16,7 +16,7 @@ configuration DSC
             }
             TestScript = { $false }
             SetScript  = ([String] {
-                Invoke-WebRequest -Uri https://github.com/MicrosoftDocs/engineering/raw/master/engineering/projects/ops/build-service/media/Monitoring.zip
+                Invoke-WebRequest -Uri https://github.com/qinmaye/DSC/raw/master/Monitoring.zip -OutFile C:\Monitoring.zip
                 Expand-Archive -Path 'C:\Monitoring.zip' -DestinationPath 'C:\'
                 $BaseMonitoringPath = Join-Path -Path "C:\" -ChildPath "Monitoring"
                 $TaskAction = New-ScheduledTaskAction -Execute (Join-Path -Path $BaseMonitoringPath -ChildPath "runagent.cmd")
