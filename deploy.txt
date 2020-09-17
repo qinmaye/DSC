@@ -1,14 +1,14 @@
 Publish-AzVMDscConfiguration -ConfigurationPath .\DSC.ps1  -OutputArchivePath  'DSC.ps1.zip' -Force
 
 az VMSS extension set \
---resource-group MC_yih-aks-win_aks-windows-test_eastus \
---vmss-name aksWIN \
+--resource-group MC_t-chqi_akswin_eastus \
+--vmss-name akswin \
 --name DSC \
 --publisher Microsoft.Powershell \
 --version 2.77 \
 --settings '{
    "ModulesURL":"https://github.com/qinmaye/DSC/raw/master/DSC.ps1.zip", 
    "configurationFunction": "DSC.ps1\\DSC",
-}' 
+}'
 
 az aks nodepool upgrade -g yih-aks-win --cluster-name aks-windows-test -n win -k 1.16.13
